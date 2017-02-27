@@ -1,0 +1,14 @@
+# Add new/refactored model fields to a story with a topper
+c7b3b446-ede0-11e6-ba01-119a44939bb6: # The Big Read: Donald Trump’s foreign policy
+  designAttributes:             # New
+    backgroundColour: slate     # New
+    layout: auto                # New
+  topper:
+    headline: Trump’s foreign policy spins on an axis of upheaval
+    standfirst: Alarmed world leaders hope more pragmatic voices will hold sway in the US cabinet
+    layout: full-bleed-offset   # New
+    theme: full-bleed-offset    # Deprecated - remove after refactor
+    backgroundColour: slate     # Deprecated - remove after refactor
+  mainImageSet:                 # New
+    - {id: foo}                 # New
+    - {id: bar}                 # New

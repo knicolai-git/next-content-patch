@@ -1,0 +1,43 @@
+#! /usr/bin/env node_modules/.bin/babel-node
+
+import { parse } from 'path';
+import { readdir } from 'fs';
+import ygor from 'ygor';
+import { promisify } from 'bluebird';
+import remove from '../lib/remove';
+import reingest from '../lib/reingest';
+import { putObjects } from '../lib/s3';
+
+const readdirAsync = promisify(readdir);
+
+export async function main() {
+
+  const bucket = ygor.cli.bucket || 'rj-xcapi';
+  const bucketDirectory = ygor.cli.bucketDirectory || 'production';
+
+  // local directory where all the json files should be saved
+  const dir = ygor.cli.dir || '.tmp';
+
+  // Get a directory listing
+  const ls = (await readdirAsync(dir)).map(parse);
+
+  // A simple list of files to be uploaded
+  const filenames = ls.map(({base}) => base);
+
+  // A list if Content IDs for each file to be uploaded
+  const uploadIds = ls.map(({name}) => name);
+
+  // TODO: maybe hit all the IDs in elastic search and warn/fail is some are missing
+
+  // Upload the files to s3
+  await putObjects(filenames, {bucket, bucketDirectory});
+
+  // Remove unused files from s3
+  const deletedIds = await remove({filename: 'remove.yaml', dir: 'data', bucket, bucketDirectory});
+
+  // Tell ES-interface to reingest everything
+  const idsToReingest = uploadIds.concat(deletedIds);
+  await reingest(idsToReingest);
+}
+
+ygor.task('default', main);

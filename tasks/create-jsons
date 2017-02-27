@@ -1,0 +1,63 @@
+#! /usr/bin/env node_modules/.bin/babel-node
+
+import ygor from 'ygor';
+import * as reader from '../lib/reader';
+import { writeBuilder } from '../lib/writer';
+import Builder from '../lib/builder';
+import { validateBuilder } from '../lib/validator';
+import { Package } from '../lib/models';
+
+export async function buildData() {
+
+  // directory where all the yaml files are stored
+  const inputDir = ygor.cli.inputDir || 'data';
+
+  // create a new content builder: this will stop duplicates content items
+  // and ensure the data is composed correctly according to models we expect
+  const builder = new Builder();
+
+  // read packages.yaml into the content builder
+  await reader.packages(builder, inputDir, 'packages.yaml');
+
+  // read articles.yaml into the content builder
+  await reader.articles(builder, inputDir, 'articles.yaml');
+
+  // Turn on debugging output
+  if (ygor.cli.dump) {
+    const filter = typeof ygor.cli.dump === 'string' ? ygor.cli.dump.split(/[,\ ]+/) : null;
+    Builder.dump(builder, filter);
+  } else if (typeof ygor.cli.package === 'string') {
+    builder.content.forEach((content) => {
+      if (!(content instanceof Package)) return;
+      if (ygor.cli.package !== content.uuid) return;
+      content.dumpContents();
+    });
+  }
+
+  // validate all the content data
+  validateBuilder(builder);
+
+  return builder;
+}
+
+export async function writeData() {
+
+  const builder = await buildData();
+
+  // local directory where all the json files should be saved
+  const outputDir = ygor.cli.outputDir || '.tmp';
+
+  // create the outputDir if not already present
+  ygor.shell(`mkdir -p ${outputDir}`);
+
+  // clean the outputDir directory
+  ygor.shell(`rm -rf ${outputDir}s/*`);
+
+  await writeBuilder(builder, outputDir);
+  console.log('\nWrite content:\n');
+  console.log([...builder.content.values()].map(item => `${outputDir}/${item.filename}`).join('\n'));
+}
+
+ygor.task('default', writeData)
+    .task('write', writeData)
+    .task('data', buildData);

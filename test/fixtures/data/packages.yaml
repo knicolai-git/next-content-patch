@@ -1,0 +1,15 @@
+abc:
+  descriptionXML: I am a description
+  contains:
+    - {id: foobar}
+    - {id: bar}
+    - {id: baz}
+    - {id: beep}
+
+xyz:
+  descriptionXML: I am the sdsdjsahdjksa description
+  contains:
+    - {id: foobar}
+    - {id: bar}
+    - {id: baz}
+    - {id: beep}
