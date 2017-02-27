@@ -1,12 +1,11 @@
 {
-  "name": "@financial-times/content-patch",
+  "name": "@financial-times/next-content-patch",
   "version": "1.0.0",
   "description": "Create JSON and send it to S3 so that we can patch content in ES",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "start": "babel-node ./tasks/write",
     "test": "ava"
   },
   "repository": {
