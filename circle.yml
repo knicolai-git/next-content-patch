@@ -3,7 +3,11 @@ machine:
     version: 7.6.0
 
 deployment:
+  ci:
+    branch: ^(?!master)$
+    commands:
+      - tasks/deploy --bucketDirectory=circle
   production:
     branch: master
     commands:
-      - tasks/deploy --bucketDirectory=circle
+      - tasks/deploy --bucketDirectory=prod
