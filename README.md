@@ -1,4 +1,4 @@
-#  [![Build Status][circle-image]][circle-url]
+# Content Patch [![Build Status][circle-image]][circle-url]
 
 Builds JSON and sends it to S3 so that ES-interface can patch content with
 experimental data that's not yet available in CAPI.
