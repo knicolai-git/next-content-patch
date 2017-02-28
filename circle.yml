@@ -6,4 +6,4 @@ deployment:
   production:
     branch: master
     commands:
-      - tasks/deploy
+      - tasks/deploy --bucketDirectory=circle
