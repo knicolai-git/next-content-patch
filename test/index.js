@@ -8,5 +8,5 @@ import test from 'ava';
 // });
 
 test(async t => {
-  t.ok(true);
+  t.true(true);
 });
