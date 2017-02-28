@@ -6,14 +6,19 @@ import ygor from 'ygor';
 import { promisify } from 'bluebird';
 import remove from '../lib/remove';
 import reingest from '../lib/reingest';
-import { putObjects } from '../lib/s3';
+import { syncDirectory } from '../lib/s3';
 
 const readdirAsync = promisify(readdir);
 
+
+// Increase the socket pool size in the http and https global agents to improve bandwidth
+require('http').globalAgent.maxSockets = require('https').globalAgent.maxSockets = 20;
+
 export async function main() {
 
-  const bucket = ygor.cli.bucket || 'rj-xcapi';
-  const bucketDirectory = ygor.cli.bucketDirectory || 'production';
+
+  const bucket = ygor.cli.bucket || 'rj-xcapi-mock';
+  const bucketDirectory = ygor.cli.bucketDirectory || 'local';
 
   // local directory where all the json files should be saved
   const dir = ygor.cli.dir || '.tmp';
@@ -30,7 +35,7 @@ export async function main() {
   // TODO: maybe hit all the IDs in elastic search and warn/fail is some are missing
 
   // Upload the files to s3
-  await putObjects(filenames, {bucket, bucketDirectory});
+  await syncDirectory(dir, {bucket, bucketDirectory});
 
   // Remove unused files from s3
   const deletedIds = await remove({filename: 'remove.yaml', dir: 'data', bucket, bucketDirectory});
