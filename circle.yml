@@ -7,7 +7,3 @@ deployment:
     branch: master
     commands:
       - tasks/deploy
-
-notify:
-  webhooks:
-    - url: https://ft-next-webhooks.herokuapp.com/circleci
