@@ -38,7 +38,7 @@ export async function main() {
   await syncDirectory(dir, {bucket, bucketDirectory});
 
   // Remove unused files from s3
-  const deletedIds = await remove({filename: 'remove.yaml', dir: 'data', bucket, bucketDirectory});
+  const deletedIds = []; //await remove({filename: 'remove.yaml', dir: 'data', bucket, bucketDirectory});
 
   // Tell ES-interface to reingest everything
   const idsToReingest = uploadIds.concat(deletedIds);
