@@ -15,8 +15,6 @@ const readdirAsync = promisify(readdir);
 require('http').globalAgent.maxSockets = require('https').globalAgent.maxSockets = 20;
 
 export async function main() {
-
-
   const bucket = ygor.cli.bucket || 'rj-xcapi-mock';
   const bucketDirectory = ygor.cli.bucketDirectory || 'local';
 
@@ -31,6 +29,19 @@ export async function main() {
 
   // A list if Content IDs for each file to be uploaded
   const uploadIds = ls.map(({name}) => name);
+
+  if (!filenames.length) {
+    if (!ygor.cli.removeAll) {
+      throw new Error('Unsafe operation: Cannot sync an empty directory without --removeAll option.');
+    } else {
+      console.log(`
+        # WARNING:
+        - The --removeAll option is turned on and ...
+        - Upload directory is empty so we're going to sync an empty directory.
+        - The contents of s3://${bucket}/${bucketDirectory}/ will be deleted.
+        - Nothing in ElasticSearch will be reingested`);
+    }
+  }
 
   // TODO: maybe hit all the IDs in elastic search and warn/fail is some are missing
 

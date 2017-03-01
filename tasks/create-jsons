@@ -42,8 +42,6 @@ export async function buildData() {
 
 export async function writeData() {
 
-  const builder = await buildData();
-
   // local directory where all the json files should be saved
   const outputDir = ygor.cli.outputDir || '.tmp';
 
@@ -51,7 +49,14 @@ export async function writeData() {
   ygor.shell(`mkdir -p ${outputDir}`);
 
   // clean the outputDir directory
-  ygor.shell(`rm -rf ${outputDir}s/*`);
+  ygor.shell(`rm -rf ${outputDir}/*`);
+
+  if (ygor.cli.removeAll) {
+    console.log(`Quiting with empty outputDir=${outputDir}`);
+    return;
+  }
+
+  const builder = await buildData();
 
   await writeBuilder(builder, outputDir);
   console.log('\nWrite content:\n');
