@@ -29,7 +29,7 @@ aec5898e-b88c-11e6-ba85-95d1533d9a62:
     - {id: 0447a2b4-b826-11e6-ba85-95d1533d9a62} # Fashion
 
 # Xi's China
-xis-china:
+85d5075e-f9ad-11e6-9516-2d969e0d3b65:
   description: >
     Something about Xi's China
   contains:
@@ -78,25 +78,25 @@ xis-china:
     - {id: 909b5f16-d203-11e6-b06b-680c49b4b4c0} # Gerrard Gethings’ farmyard animals
 
 # Doing business in Greece
-doing-business-greece:
-  description: >
-    From airports to utilities, foreign investors are buying assets being
-    privatised by Alexis Tsipras’ leftwing government. While politicians
-    and creditors wrangle over the terms of Greece’s €86bn bailout, businesses
-    and entrepreneurs are adapting to new realities and opportunities
-  contains:
-    - {id: e6d0cd70-b724-11e6-961e-a1acd97f622d}
-    - {id: 063f2d4e-b727-11e6-961e-a1acd97f622d}
-    - {id: ea01d1e2-b724-11e6-961e-a1acd97f622d}
-    - {id: 128303aa-b727-11e6-961e-a1acd97f622d}
-    - {id: 436b20f8-b725-11e6-961e-a1acd97f622d}
-    - {id: 04084f5e-b729-11e6-961e-a1acd97f622d}
-    - {id: ed349728-b724-11e6-961e-a1acd97f622d}
-    - {id: 0c1614a8-b727-11e6-961e-a1acd97f622d}
-    - {id: 08db5474-b727-11e6-961e-a1acd97f622d}
+# doing-business-greece:
+#   description: >
+#     From airports to utilities, foreign investors are buying assets being
+#     privatised by Alexis Tsipras’ leftwing government. While politicians
+#     and creditors wrangle over the terms of Greece’s €86bn bailout, businesses
+#     and entrepreneurs are adapting to new realities and opportunities
+#   contains:
+#     - {id: e6d0cd70-b724-11e6-961e-a1acd97f622d}
+#     - {id: 063f2d4e-b727-11e6-961e-a1acd97f622d}
+#     - {id: ea01d1e2-b724-11e6-961e-a1acd97f622d}
+#     - {id: 128303aa-b727-11e6-961e-a1acd97f622d}
+#     - {id: 436b20f8-b725-11e6-961e-a1acd97f622d}
+#     - {id: 04084f5e-b729-11e6-961e-a1acd97f622d}
+#     - {id: ed349728-b724-11e6-961e-a1acd97f622d}
+#     - {id: 0c1614a8-b727-11e6-961e-a1acd97f622d}
+#     - {id: 08db5474-b727-11e6-961e-a1acd97f622d}
 
 # Brexit: In or out?
-brexit-in-or-out:
+5c8c7e2e-d715-11e5-829b-8564e7528e54: # This actually points at the Poll tracker at the moment
   description: >
     The FT’s comprehensive guide to the vote on whether Britain
     should stay in Europe, with all the latest news, analysis
