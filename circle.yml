@@ -14,4 +14,4 @@ deployment:
   production:
     branch: master
     commands:
-      - tasks/deploy --dir=$CIRCLE_ARTIFACTS --bucketDirectory=prod
+      - tasks/deploy --dir=$CIRCLE_ARTIFACTS --bucketDirectory=production
