@@ -6,7 +6,9 @@ import { writeBuilder } from '../lib/writer';
 import Builder from '../lib/builder';
 import { validateBuilder } from '../lib/validator';
 import { Package } from '../lib/models';
+import { task } from '../lib/utils';
 
+// Assembles data from YAML files in memory and validates them. does not save the data
 export async function buildData() {
 
   // directory where all the yaml files are stored
@@ -16,10 +18,10 @@ export async function buildData() {
   // and ensure the data is composed correctly according to models we expect
   const builder = new Builder();
 
-  // read packages.yaml into the content builder
+  // process packages.yaml: read file and add content items to the builder
   await reader.packages(builder, inputDir, 'packages.yaml');
 
-  // read articles.yaml into the content builder
+  // process articles.yaml: read file and add content items to the builder
   await reader.articles(builder, inputDir, 'articles.yaml');
 
   // Turn on debugging output
@@ -34,12 +36,13 @@ export async function buildData() {
     });
   }
 
-  // validate all the content data
+  // validate all the content
   validateBuilder(builder);
 
   return builder;
 }
 
+// Read YAML files, assemble content items and save each item as a JSON file
 export async function writeData() {
 
   // local directory where all the json files should be saved
@@ -52,28 +55,24 @@ export async function writeData() {
   ygor.shell(`rm -rf ${outputDir}/*`);
 
   if (ygor.cli.removeAll) {
-    console.log(`Quiting with empty outputDir=${outputDir}`);
+    console.log(`Exiting early, leaving outputDir empty. (outputDir=${outputDir})`);
     return;
   }
 
+  // Assemble all the data from YAML files
   const builder = await buildData();
 
+  // write the contents of the builder to disk
+  // each content item is a separate JSON file
   await writeBuilder(builder, outputDir);
-  console.log('\nWrite content:\n');
+
+  // Output a list of all the files created
+  console.log('');
+  console.log('Write content:');
+  console.log('');
   console.log([...builder.content.values()].map(item => `${outputDir}/${item.filename}`).join('\n'));
 }
 
-function run(fn) {
-  return async function() {
-    try {
-      await fn();
-    } catch (e) {
-      console.error(e.message);
-      process.exit(1);
-    }
-  }
-}
-
-ygor.task('default', run(writeData))
-    .task('write', run(writeData))
-    .task('data', run(buildData));
+ygor.task('default', task(writeData))
+    .task('write', task(writeData))
+    .task('data', task(buildData));

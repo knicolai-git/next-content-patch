@@ -5,18 +5,20 @@ import { readdir } from 'fs';
 import ygor from 'ygor';
 import { promisify } from 'bluebird';
 import remove from '../lib/remove';
-import reingest from '../lib/reingest';
+import { regingestContentAllRegions } from '../lib/es';
 import { syncDirectory } from '../lib/s3';
+import { task } from '../lib/utils';
 
 const readdirAsync = promisify(readdir);
 
-
-// Increase the socket pool size in the http and https global agents to improve bandwidth
+// Increase the socket pool size in the http and https global agents
+// to improve bandwidth -- used for quicker uploads to S3.
 require('http').globalAgent.maxSockets = require('https').globalAgent.maxSockets = 20;
 
 export async function main() {
   const bucket = ygor.cli.bucket || 'rj-xcapi-mock';
   const bucketDirectory = ygor.cli.bucketDirectory || 'local';
+  const concurrency = ygor.cli.concurrency || 10;
 
   // local directory where all the json files should be saved
   const dir = ygor.cli.dir || '.tmp';
@@ -39,7 +41,8 @@ export async function main() {
         - The --removeAll option is turned on and ...
         - Upload directory is empty so we're going to sync an empty directory.
         - The contents of s3://${bucket}/${bucketDirectory}/ will be deleted.
-        - Nothing in ElasticSearch will be reingested`);
+        - Nothing in ElasticSearch will be reingested
+      `);
     }
   }
 
@@ -48,23 +51,17 @@ export async function main() {
   // Upload the files to s3
   await syncDirectory(dir, {bucket, bucketDirectory});
 
+  if (ygor.cli.skipReingest) {
+    console.log('Skipping reingestion');
+    return;
+  }
+
   // Remove unused files from s3
   const deletedIds = []; //await remove({filename: 'remove.yaml', dir: 'data', bucket, bucketDirectory});
 
   // Tell ES-interface to reingest everything
   const idsToReingest = uploadIds.concat(deletedIds);
-  await reingest(idsToReingest);
+  await regingestContentAllRegions(idsToReingest, concurrency);
 }
 
-function run(fn) {
-  return async function() {
-    try {
-      await fn();
-    } catch (e) {
-      console.error(e.message);
-      process.exit(1);
-    }
-  }
-}
-
-ygor.task('default', run(main));
+ygor.task('default', task(main));
