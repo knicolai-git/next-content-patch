@@ -2,12 +2,16 @@ machine:
   node:
     version: 7.6.0
 
+test:
+  post:
+    - tasks/create-jsons --dir=$CIRCLE_ARTIFACTS
+
 deployment:
   ci:
     branch: ^(?!master)$
     commands:
-      - tasks/deploy --bucketDirectory=circle
+      - tasks/deploy --dir=$CIRCLE_ARTIFACTS --bucketDirectory=circle
   production:
     branch: master
     commands:
-      - tasks/deploy --bucketDirectory=prod
+      - tasks/deploy --dir=$CIRCLE_ARTIFACTS --bucketDirectory=prod
