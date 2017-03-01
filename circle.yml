@@ -4,7 +4,7 @@ machine:
 
 test:
   post:
-    - tasks/create-jsons --dir=$CIRCLE_ARTIFACTS
+    - tasks/create-jsons --outputDir=$CIRCLE_ARTIFACTS
 
 deployment:
   ci:
