@@ -45,4 +45,15 @@ export async function main() {
   await reingest(idsToReingest);
 }
 
-ygor.task('default', main);
+function run(fn) {
+  return async function() {
+    try {
+      await fn();
+    } catch (e) {
+      console.error(e.message);
+      process.exit(1);
+    }
+  }
+}
+
+ygor.task('default', run(main));

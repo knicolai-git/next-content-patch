@@ -58,6 +58,17 @@ export async function writeData() {
   console.log([...builder.content.values()].map(item => `${outputDir}/${item.filename}`).join('\n'));
 }
 
-ygor.task('default', writeData)
-    .task('write', writeData)
-    .task('data', buildData);
+function run(fn) {
+  return async function() {
+    try {
+      await fn();
+    } catch (e) {
+      console.error(e.message);
+      process.exit(1);
+    }
+  }
+}
+
+ygor.task('default', run(writeData))
+    .task('write', run(writeData))
+    .task('data', run(buildData));
