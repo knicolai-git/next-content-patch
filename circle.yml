@@ -8,7 +8,9 @@ test:
 
 deployment:
   ci:
-    branch: ^(?!master)$
+    branch:
+      ignore:
+        - master
     commands:
       - tasks/deploy --dir=$CIRCLE_ARTIFACTS --bucketDirectory=circle
   production:
