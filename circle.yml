@@ -10,7 +10,7 @@ deployment:
   ci:
     branch: /^(?!master$).*$/
     commands:
-      - tasks/deploy --dir=$CIRCLE_ARTIFACTS --bucketDirectory=circle
+      - tasks/deploy --dir=$CIRCLE_ARTIFACTS --bucketDirectory=circle --skipReingest
   production:
     branch: master
     commands:
