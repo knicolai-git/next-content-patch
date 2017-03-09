@@ -121,7 +121,18 @@ aec5898e-b88c-11e6-ba85-95d1533d9a62:
     sequence: none
     labelType: none
     displayIntroduction: false
-  leadImages: []
+  leadImages:
+    - {ratio: 1, width: 2612, height: 2612, id: http://api.ft.com/content/b84610a0-fcf2-11e6-8d8e-a5e3738f9ae4, type: square}
+    - {ratio: 1.7777, width: 2048, height: 1152, id: http://api.ft.com/content/b9c980ba-fcf2-11e6-8d8e-a5e3738f9ae4, type: standard}
+  topper:
+    backgroundColour: black
+    headline: "‘I’m not a misanthrope. I have a life and lovers’"
+    standfirst: "With here blue-blooded hippy vibe and all the rest of it Laura Marling gets a few of these in here"
+    theme: split-text-center
+    layout: split-text-center
+    images:
+      - {ratio: 1, width: 2612, height: 2612, id: http://api.ft.com/content/b84610a0-fcf2-11e6-8d8e-a5e3738f9ae4, type: square}
+      - {ratio: 1.7777, width: 2048, height: 1152, id: http://api.ft.com/content/b9c980ba-fcf2-11e6-8d8e-a5e3738f9ae4, type: standard}
   description: >
     From airports to utilities, foreign investors are buying assets being
     privatised by Alexis Tsipras’ leftwing government. While politicians
