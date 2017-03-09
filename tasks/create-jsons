@@ -1,5 +1,6 @@
 #! /usr/bin/env node_modules/.bin/babel-node
 
+import { join } from 'path';
 import ygor from 'ygor';
 import * as reader from '../lib/reader';
 import { writeBuilder } from '../lib/writer';
@@ -16,18 +17,18 @@ export async function buildData() {
   // and ensure the data is composed correctly according to models we expect
   const builder = new Builder();
 
-  // read packages.yaml into the content builder
-  await reader.packages(builder, inputDir, 'packages.yaml');
+  // process packages.yaml: read file and add content items to the builder
+  await reader.packages(builder, join(inputDir, 'packages.yaml'));
 
-  // read articles.yaml into the content builder
-  await reader.articles(builder, inputDir, 'articles.yaml');
+  // process articles.yaml: read file and add content items to the builder
+  await reader.articles(builder, join(inputDir, 'articles.yaml'));
 
   // Turn on debugging output
   if (ygor.cli.dump) {
     const filter = typeof ygor.cli.dump === 'string' ? ygor.cli.dump.split(/[,\ ]+/) : null;
     Builder.dump(builder, filter);
   } else if (typeof ygor.cli.package === 'string') {
-    builder.content.forEach((content) => {
+    builder.content.forEach(content => {
       if (!(content instanceof Package)) return;
       if (ygor.cli.package !== content.uuid) return;
       content.dumpContents();
@@ -57,10 +58,11 @@ export async function writeData() {
   }
 
   const builder = await buildData();
+  const writtenFiles = await writeBuilder(builder, outputDir);
 
-  await writeBuilder(builder, outputDir);
-  console.log('\nWrite content:\n');
-  console.log([...builder.content.values()].map(item => `${outputDir}/${item.filename}`).join('\n'));
+  // Output a list of all the files created
+  console.log('\nWrite content:');
+  console.log(writtenFiles.filter(Boolean).join('\n'));
 }
 
 function run(fn) {
