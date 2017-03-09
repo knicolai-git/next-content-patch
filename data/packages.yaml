@@ -1,35 +1,56 @@
 # Best books of 2017
 aec5898e-b88c-11e6-ba85-95d1533d9a62:
+  design:
+    theme: basic
+  tableOfContents:
+    sequence: none
+    labelType: none
+    displayIntroduction: true
+  topper:
+    # headline: null,
+    standfirst: " "
+    backgroundColour: slate,
+    layout: full-bleed-offset
+    theme: full-bleed-offset # deprecated
+    images: [] # deprecated
+  leadImages: []
   description: >
     FT writers and guests select their must-read titles
   contains:
-    - {id: ffdb7ae0-b819-11e6-ba85-95d1533d9a62} # Business
-    - {id: 315c348e-b819-11e6-ba85-95d1533d9a62} # Economics
-    - {id: 156f0328-b81e-11e6-ba85-95d1533d9a62} # Politics
-    - {id: 6c126eae-b81e-11e6-ba85-95d1533d9a62} # History
-    - {id: c2736eba-b81e-11e6-ba85-95d1533d9a62} # Science
-    - {id: 0ddeb68e-b81f-11e6-ba85-95d1533d9a62} # Sport
-    - {id: 536e6672-b81f-11e6-ba85-95d1533d9a62} # Art & photography
-    - {id: a9c4758e-b81f-11e6-ba85-95d1533d9a62} # Architecture & design
-    - {id: fe2da1cc-b81f-11e6-ba85-95d1533d9a62} # Cinema
-    - {id: 49c3edda-b820-11e6-ba85-95d1533d9a62} # Classical music & opera
-    - {id: 82be3bcc-b820-11e6-ba85-95d1533d9a62} # Pop music
-    - {id: ad99928c-b821-11e6-ba85-95d1533d9a62} # Fiction
-    - {id: 23c18f5a-b822-11e6-ba85-95d1533d9a62} # Fiction in translation
-    - {id: 9583417e-b822-11e6-ba85-95d1533d9a62} # Poetry
-    - {id: 952faba8-b823-11e6-ba85-95d1533d9a62} # Children’s fiction
-    - {id: f90a98ea-b823-11e6-ba85-95d1533d9a62} # Picture books
-    - {id: 41008f7e-b824-11e6-ba85-95d1533d9a62} # Young adult fiction
-    - {id: 99d67032-b824-11e6-ba85-95d1533d9a62} # Crime fiction
-    - {id: de4fa4a4-b824-11e6-ba85-95d1533d9a62} # Science fiction
-    - {id: 3d3ffbc6-b825-11e6-ba85-95d1533d9a62} # Literary non-fiction
-    - {id: 84e8912c-b825-11e6-ba85-95d1533d9a62} # Food
-    - {id: c0eaa1b0-b825-11e6-ba85-95d1533d9a62} # Travel
-    - {id: 503fb2ec-b826-11e6-ba85-95d1533d9a62} # Gardening
-    - {id: 0447a2b4-b826-11e6-ba85-95d1533d9a62} # Fashion
+    - {id: ffdb7ae0-b819-11e6-ba85-95d1533d9a62, title: Business} # Business
+    - {id: 315c348e-b819-11e6-ba85-95d1533d9a62, title: Economics} # Economics
+    - {id: 156f0328-b81e-11e6-ba85-95d1533d9a62, title: Politics} # Politics
+    - {id: 6c126eae-b81e-11e6-ba85-95d1533d9a62, title: History} # History
+    - {id: c2736eba-b81e-11e6-ba85-95d1533d9a62, title: Science} # Science
+    - {id: 0ddeb68e-b81f-11e6-ba85-95d1533d9a62, title: Sport} # Sport
+    - {id: 536e6672-b81f-11e6-ba85-95d1533d9a62, title: "Art & photography"} # Art & photography
+    - {id: a9c4758e-b81f-11e6-ba85-95d1533d9a62, title: "Architecture & design"} # Architecture & design
+    - {id: fe2da1cc-b81f-11e6-ba85-95d1533d9a62, title: Cinema} # Cinema
+    - {id: 49c3edda-b820-11e6-ba85-95d1533d9a62, title: "Classical music & opera"} # Classical music & opera
+    - {id: 82be3bcc-b820-11e6-ba85-95d1533d9a62, title: Pop music} # Pop music
+    - {id: ad99928c-b821-11e6-ba85-95d1533d9a62, title: Fiction} # Fiction
+    - {id: 23c18f5a-b822-11e6-ba85-95d1533d9a62, title: Fiction in translation} # Fiction in translation
+    - {id: 9583417e-b822-11e6-ba85-95d1533d9a62, title: Poetry} # Poetry
+    - {id: 952faba8-b823-11e6-ba85-95d1533d9a62, title: "Children’s fiction"} # Children’s fiction
+    - {id: f90a98ea-b823-11e6-ba85-95d1533d9a62, title: Picture books} # Picture books
+    - {id: 41008f7e-b824-11e6-ba85-95d1533d9a62, title: Young adult fiction} # Young adult fiction
+    - {id: 99d67032-b824-11e6-ba85-95d1533d9a62, title: Crime fiction} # Crime fiction
+    - {id: de4fa4a4-b824-11e6-ba85-95d1533d9a62, title: Science fiction} # Science fiction
+    - {id: 3d3ffbc6-b825-11e6-ba85-95d1533d9a62, title: Literary non-fiction} # Literary non-fiction
+    - {id: 84e8912c-b825-11e6-ba85-95d1533d9a62, title: Food} # Food
+    - {id: c0eaa1b0-b825-11e6-ba85-95d1533d9a62, title: Travel} # Travel
+    - {id: 503fb2ec-b826-11e6-ba85-95d1533d9a62, title: Gardening} # Gardening
+    - {id: 0447a2b4-b826-11e6-ba85-95d1533d9a62, title: Fashion} # Fashion
 
 # Xi's China
 85d5075e-f9ad-11e6-9516-2d969e0d3b65:
+  design:
+    theme: extra
+  tableOfContents:
+    sequence: none
+    labelType: part-number
+    displayIntroduction: false
+  leadImages: []
   description: >
     Something about Xi's China
   contains:
@@ -39,30 +60,45 @@ aec5898e-b88c-11e6-ba85-95d1533d9a62:
 
 # Women of the year 2016
 4ff0cb62-bc74-11e6-8b45-b8b81dd5d080:
+  # TODO: how to change the headline only while behind a flag
+  design:
+    theme: basic
+  tableOfContents:
+    sequence: none
+    labelType: none
+    displayIntroduction: false
+  leadImages: []
   description: >
     From Theresa May to Simone Biles, we interview and
     profile the women of the year
   contains:
-    - {id : 2616fda2-bc06-11e6-8b45-b8b81dd5d080} # Theresa May
-    - {id : 278a54fe-bc06-11e6-8b45-b8b81dd5d080} # Simone Biles
-    - {id : 2bbe70be-bc06-11e6-8b45-b8b81dd5d080} # Jean Liu
-    - {id : cd5c2b24-bc05-11e6-8b45-b8b81dd5d080} # Dilma Rousseff
-    - {id : caa29df0-bc00-11e6-8b45-b8b81dd5d080} # Mary Berry
-    - {id : 24450582-bc06-11e6-8b45-b8b81dd5d080} # Maria Grazia Chiuri
-    - {id : 22a6925e-bc06-11e6-8b45-b8b81dd5d080} # Njideka Akunyili Crosby
-    - {id : 0055d3ea-bc06-11e6-8b45-b8b81dd5d080} # Margrethe Vestager
-    - {id : febac644-bc05-11e6-8b45-b8b81dd5d080} # Phoebe Waller-Bridge & Vicky Jones
-    - {id : a0e87a3a-bc09-11e6-8b45-b8b81dd5d080} # Hillary Clinton
-    - {id : d39c1e02-bc11-11e6-8b45-b8b81dd5d080} # Jo Cox
-    - {id : d5796cc0-bc11-11e6-8b45-b8b81dd5d080} # Zaha Hadid
-    - {id : a2a673a4-bc09-11e6-8b45-b8b81dd5d080} # Beyoncé
-    - {id : a5b907be-bc09-11e6-8b45-b8b81dd5d080} # Park Geun-hye
-    - {id : 3088a9c0-bc06-11e6-8b45-b8b81dd5d080} # Rahaf
-    - {id : 713f2c00-bc10-11e6-8b45-b8b81dd5d080} # Sushma Swaraj
-    - {id : 67883ebc-bc11-11e6-8b45-b8b81dd5d080} # Kellyanne Conway
+    - {id : 2616fda2-bc06-11e6-8b45-b8b81dd5d080, title: Theresa May} # Theresa May
+    - {id : 278a54fe-bc06-11e6-8b45-b8b81dd5d080, title: Simone Biles} # Simone Biles
+    - {id : 2bbe70be-bc06-11e6-8b45-b8b81dd5d080, title: Jean Liu} # Jean Liu
+    - {id : cd5c2b24-bc05-11e6-8b45-b8b81dd5d080, title: Dilma Rousseff} # Dilma Rousseff
+    - {id : caa29df0-bc00-11e6-8b45-b8b81dd5d080, title: Mary Berry} # Mary Berry
+    - {id : 24450582-bc06-11e6-8b45-b8b81dd5d080, title: Maria Grazia Chiuri} # Maria Grazia Chiuri
+    - {id : 22a6925e-bc06-11e6-8b45-b8b81dd5d080, title: Njideka Akunyili Crosby} # Njideka Akunyili Crosby
+    - {id : 0055d3ea-bc06-11e6-8b45-b8b81dd5d080, title: Margrethe Vestager} # Margrethe Vestager
+    - {id : febac644-bc05-11e6-8b45-b8b81dd5d080, title: "Phoebe Waller-Bridge & Vicky Jones"} # Phoebe Waller-Bridge & Vicky Jones
+    - {id : a0e87a3a-bc09-11e6-8b45-b8b81dd5d080, title: Hillary Clinton} # Hillary Clinton
+    - {id : d39c1e02-bc11-11e6-8b45-b8b81dd5d080, title: Jo Cox} # Jo Cox
+    - {id : d5796cc0-bc11-11e6-8b45-b8b81dd5d080, title: Zaha Hadid} # Zaha Hadid
+    - {id : a2a673a4-bc09-11e6-8b45-b8b81dd5d080, title: "Beyoncé"} # Beyoncé
+    - {id : a5b907be-bc09-11e6-8b45-b8b81dd5d080, title: Park Geun-hye} # Park Geun-hye
+    - {id : 3088a9c0-bc06-11e6-8b45-b8b81dd5d080, title: Rahaf} # Rahaf
+    - {id : 713f2c00-bc10-11e6-8b45-b8b81dd5d080, title: Sushma Swaraj} # Sushma Swaraj
+    - {id : 67883ebc-bc11-11e6-8b45-b8b81dd5d080, title: Kellyanne Conway} # Kellyanne Conway
 
 # Animals: a photography special
 79a65cf6-d33f-11e6-b06b-680c49b4b4c0:
+  design:
+    theme: special-report
+  tableOfContents:
+    sequence: none
+    labelType: none
+    displayIntroduction: false
+  leadImages: []
   description: >
     Rescue dogs, Tokyo parakeets and more: a selection of photographs
     that explore our relationship with animals
@@ -79,6 +115,24 @@ aec5898e-b88c-11e6-ba85-95d1533d9a62:
 
 # Doing business in Greece
 5c3cae78-dbef-11e6-9d7c-be108f1c1dce:
+  design:
+    theme: special-report
+  tableOfContents:
+    sequence: none
+    labelType: none
+    displayIntroduction: false
+  leadImages:
+    - {ratio: 1, width: 2612, height: 2612, id: http://api.ft.com/content/b84610a0-fcf2-11e6-8d8e-a5e3738f9ae4, type: square}
+    - {ratio: 1.7777, width: 2048, height: 1152, id: http://api.ft.com/content/b9c980ba-fcf2-11e6-8d8e-a5e3738f9ae4, type: standard}
+  topper:
+    backgroundColour: black
+    headline: "‘I’m not a misanthrope. I have a life and lovers’"
+    standfirst: "With here blue-blooded hippy vibe and all the rest of it Laura Marling gets a few of these in here"
+    theme: split-text-center
+    layout: split-text-center
+    images:
+      - {ratio: 1, width: 2612, height: 2612, id: http://api.ft.com/content/b84610a0-fcf2-11e6-8d8e-a5e3738f9ae4, type: square}
+      - {ratio: 1.7777, width: 2048, height: 1152, id: http://api.ft.com/content/b9c980ba-fcf2-11e6-8d8e-a5e3738f9ae4, type: standard}
   description: >
     From airports to utilities, foreign investors are buying assets being
     privatised by Alexis Tsipras’ leftwing government. While politicians
@@ -96,16 +150,22 @@ aec5898e-b88c-11e6-ba85-95d1533d9a62:
     - {id: 08db5474-b727-11e6-961e-a1acd97f622d}
 
 # Brexit: In or out?
-5c8c7e2e-d715-11e5-829b-8564e7528e54: # This actually points at the Poll tracker at the moment
+5c8c7e2e-d715-11e5-829b-8564e7528e54: # This actually points to the Poll tracker at the moment
+  design:
+    theme: basic
+  tableOfContents:
+    sequence: none
+    labelType: none
+    displayIntroduction: false
+  leadImages: []
   description: >
     The FT’s comprehensive guide to the vote on whether Britain
-    should stay in Europe, with all the latest news, analysis
-    and commentary from both sides of the debate
+    should stay in Europe
   contains:
-    - {id: 70d0bfd8-d1b3-11e5-831d-09f7778e7377} # What are the economic consequences of Brexit?
-    - {id: e90885d8-d3db-11e5-829b-8564e7528e54} # What would Brexit mean for the City of London?
-    - {id: 807750a4-d984-11e5-98fd-06d75973fe09} # What the City stands to lose and gain from Brexit
-    - {id: 202a60c0-cfd8-11e5-831d-09f7778e7377} # What has the EU done for the UK?
-    - {id: 8710df70-d49d-11e5-8887-98e7feb46f27} # Brexit: Fraying union
-    - {id: 6e5737f6-defa-11e5-b67f-a61732c1d025} # Would Brexit lead to Scotland leaving the UK?
-    - {id: 5db877f2-d0a9-11e5-831d-09f7778e7377} # Brexit debate unnerves continent’s service workers in UK
+    - {id: 70d0bfd8-d1b3-11e5-831d-09f7778e7377, title: The economy} # What are the economic consequences of Brexit?
+    - {id: e90885d8-d3db-11e5-829b-8564e7528e54, title: The city} # What would Brexit mean for the City of London?
+    - {id: 807750a4-d984-11e5-98fd-06d75973fe09, title: null} # What the City stands to lose and gain from Brexit
+    - {id: 202a60c0-cfd8-11e5-831d-09f7778e7377, title: null} # What has the EU done for the UK?
+    - {id: 8710df70-d49d-11e5-8887-98e7feb46f27, title: Fraying Union} # Brexit: Fraying union
+    - {id: 6e5737f6-defa-11e5-b67f-a61732c1d025, title: Scotland} # Would Brexit lead to Scotland leaving the UK?
+    - {id: 5db877f2-d0a9-11e5-831d-09f7778e7377, title: null} # Brexit debate unnerves continent’s service workers in UK

@@ -10,7 +10,6 @@ import { syncDirectory } from '../lib/s3';
 
 const readdirAsync = promisify(readdir);
 
-
 // Increase the socket pool size in the http and https global agents to improve bandwidth
 require('http').globalAgent.maxSockets = require('https').globalAgent.maxSockets = 20;
 
