@@ -25,7 +25,8 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.23.0",
     "coveralls": "^2.11.15",
-    "nyc": "^10.0.0"
+    "nyc": "^10.0.0",
+    "temporary": "0.0.8"
   },
   "dependencies": {
     "@ava/babel-preset-stage-4": "^1.0.0",
