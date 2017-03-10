@@ -152,7 +152,7 @@ aec5898e-b88c-11e6-ba85-95d1533d9a62:
 
 # Brexit: In or out?
 5c8c7e2e-d715-11e5-829b-8564e7528e54: # This actually points to the Poll tracker at the moment
-  title: Brexit: In
+  title: "Brexit: in or out"
   design:
     theme: extra
   tableOfContents:
